@@ -11,6 +11,7 @@ int main()
     int scorecompras;
     int scoreatraso;
     int scorepagamento;
+    int total;
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------"<< endl;
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl << endl;
@@ -18,6 +19,7 @@ int main()
     cin >> qtcompras;
     cout << "Qual o ticket medio? ";
     cin >> ticketmedio;
+    cout << endl;
     cout << "Quantas vezes o cliente atrasou o pagamento? " ;
     cin >> atrasado;
     cout << "A maioria das compras foi em dinheiro, cartao ou boleto (D/C/B)? ";
@@ -63,6 +65,20 @@ int main()
         }
     }
     cout << "Score de forma de pagamento = " << scorepagamento << " pontos" << endl << endl;
+    total = scorepagamento + scoreatraso + scorecompras;
+    if(total >= 0 && total <= 25){
+            cout << "Classificacao final = CLIENTE BRONZE" ;
+    }
+    else{
+        if(total > 25 && total <= 75){
+            cout << "Classificacao final = CLIENTE PRATA" ;
+    }
+    else{
+        if(total > 75){
+            cout << "Classificacao final = CLIENTE OURO" ;
+    }
+    }
+    }
 }
 
 

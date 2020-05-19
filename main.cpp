@@ -7,8 +7,10 @@ int main()
     float ticketmedio;
     int qtcompras;
     int atrasado;
-    char metodo;
+    string metodo;
     int scorecompras;
+    int scoreatraso;
+    int scorepagamento;
     cout << "SISTEMA DE PERFIL DE CLIENTE" << endl;
     cout << "--------------------------------"<< endl;
     cout << "INFORME OS DADOS DO ULTIMO ANO" << endl << endl;
@@ -29,10 +31,38 @@ int main()
             scorecompras = 40;
         }
         else{
+                if(ticketmedio > 3000){
             scorecompras = 60;
+                }
+                else{
+                    scorecompras = 0;
+                }
         }
     }
     cout << "Score de volume de compras = " << scorecompras <<  " pontos " << endl << endl;
-
+    if (atrasado = 1){
+        scoreatraso = 15;
+    }
+    else{
+        if(atrasado = 0){
+            scoreatraso = 30;
+        }
+        else{
+            if(atrasado > 1 || qtcompras == 0){
+                scoreatraso = 0;
+            }
+        }
+    }
+    cout << "Score de inadimplencia = " << scoreatraso << " pontos" << endl;
+    if (metodo == "D"){
+        scorepagamento = 5;
+    }
+    else{
+        if (metodo == "C" || metodo == "B"){
+            scorepagamento = 10;
+        }
+    }
+    cout << "Score de forma de pagamento = " << scorepagamento << " pontos" << endl << endl;
 }
+
 
